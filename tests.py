@@ -1,9 +1,9 @@
 import pytest
 from report import Report
 
-def test_valid_tester():
-    report = Report("Emilia", "08 2002", "pass", "Description", "Result")
-    assert report.tester == "Emilia"
+def test_valid_date():
+    report = Report("Emilia", "12.08.2002", "pass", "Description", "Result")
+    assert report.date == "12.08.2002"
 
 def test_invalid_tester():
     with pytest.raises(ValueError):
@@ -24,3 +24,7 @@ def test_empty_description():
 def test_empty_result():
     report = Report("Emilia", "08 2002", "pass", "Description", "")
     assert report.result == ""
+
+def test_edgecase_date():
+    report = Report("Emilia", "49.08.2002", "pass", "Description", "")
+    assert report.date == "49.08.2002"

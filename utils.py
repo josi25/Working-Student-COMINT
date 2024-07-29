@@ -13,3 +13,6 @@ def generate_date_format():
             date_formats.append(f'%Y{sep}{month}')
 
     return date_formats
+
+
+

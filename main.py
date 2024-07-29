@@ -24,7 +24,6 @@ def read_csv(file_path: str):
             except ValueError as ve:
                 print(f"Value error occured: {ve}")
 
-
     return reports
 
 def convert_to_xml(test_report):
