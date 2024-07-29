@@ -8,6 +8,7 @@ def generate_date_format():
         for month in months:
             date_formats.append(f'%d{sep}{month}{sep}%Y')
             date_formats.append(f'{month}{sep}%d{sep}%Y')
+            date_formats.append(f'%Y{sep}{month}{sep}%d')
             date_formats.append(f'{month}{sep}%Y')
             date_formats.append(f'%Y{sep}{month}')
 

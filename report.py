@@ -24,6 +24,7 @@ class Report:
             # Check if the tester name (case-insensitive) matches a valid tester
             if (self.tester.strip().lower() == name.lower()):
                 # If a match is found, set the tester attribute to the valid name
+                self.tester = name
                 found = name
                 break
         if found is None:
