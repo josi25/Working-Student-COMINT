@@ -3,7 +3,7 @@ from report import Report
 
 def test_valid_date():
     report = Report("Emilia", "12.08.2002", "pass", "Description", "Result")
-    assert report.date == "12.08.2002"
+    assert report.date == "2002-08-12"
 
 def test_invalid_tester():
     with pytest.raises(ValueError):
@@ -26,5 +26,6 @@ def test_empty_result():
     assert report.result == ""
 
 def test_edgecase_date():
-    report = Report("Emilia", "49.08.2002", "pass", "Description", "")
-    assert report.date == "49.08.2002"
+    with pytest.raises(ValueError):
+        Report("Emilia", "49.08.2002", "pass", "Description", "Result")
+
